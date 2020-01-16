@@ -1,0 +1,144 @@
+header{
+    background-color: black;
+}
+
+
+
+.logo{
+    color: blanchedalmond;
+    justify-content: center;
+}
+
+#qplogo{
+    width: 8%;
+    padding: 0.5%;
+    align-content: center;
+    justify-content: center;
+}
+body{
+    background-color: #E8E8E8;
+}
+
+.side{
+    /* margin-top: 3%; */
+    /* padding: 0; */
+    /* padding:3%; */
+    /* background-color: ; */
+    height: strech;
+    border: 1px solid #B8B8B8;
+    
+    
+    border-radius: 2%;
+    color: #ffc107;
+    color: black;
+    background: #E0E0E0;
+    
+}
+
+#glrow{
+    margin-top: 0.5%;
+    padding-top: 0;
+    padding: 0.5%;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+
+
+
+ul{
+    list-style-type: none;
+}
+
+li{
+    padding-top: 1%;
+}
+
+.containerq, .containerq::before, .containerq::after {
+    box-sizing: border-box;
+    
+  }
+
+  .containerq{
+      display: block;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      
+      
+  }
+
+ 
+  .btn{
+      font-size: 27px;
+  }
+
+  #questions{
+      font-size: 50px;
+  }
+
+  #questionid{
+      justify-content: center;
+  }
+
+.pitanje{
+    justify-content: center;
+      
+} 
+
+.btn-grid{
+    display: grid;
+    grid-template-columns: repeat(2,auto);
+    gap: 20px;
+}
+
+
+.div_btn{
+    display: flex; justify-content: center;
+}
+.btn{
+    background-color: black;
+    color: white;
+    /* background-color: rgb(107, 160, 69); */
+}
+
+.btn:hover{
+    background-color: grey;
+}
+
+.pitanje{
+    /* display: flex; justify-content: center; */
+}
+
+.controls{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    font-size: 40px;
+}
+
+.next_div{
+    display: flex; justify-content: flex-end;
+    
+}
+
+.next-btn{
+    background-color: #2E8B57;
+}
+.next-btn:hover{
+    background-color: rgb(116,209,158);
+}
+.start-btn{
+    background-color: #2E8B57;
+}
+.start-btn:hover{
+    background-color: rgb(116,209,158);
+}
+
+#glrow{
+    font-size: 25px;
+}
+
+.hello{
+    color: white;
+}
