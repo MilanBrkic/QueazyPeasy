@@ -13,10 +13,11 @@ const next=document.getElementById('next-btn');
 next.style.visibility = "hidden";
 const start = document.getElementById('start-btn');
 
+
 var correctVar;
 var wrongArray;
 var index;
-// var obj;
+var obj;
 
 // const obj=[{
 //     question: "Koliko je 2+2?",
@@ -44,28 +45,33 @@ var index;
 // }]
 
 
+
+var obj;
+
 function getJSON(){
     var xhttp = new XMLHttpRequest();
-    var response;
+    
    
-    xhttp.open('GET',"data.json",true);
+    xhttp.open('GET',"data.json",false);
 
     xhttp.onload = function(){
-        response =JSON.parse(xhttp.responseText);
-        console.log(response)
-        // return response;
+        var response =JSON.parse(xhttp.responseText);
+        obj = response.data;
+        
     }
     
     xhttp.send();
    
 }
 
-getJSON();
-// console.log(getJSON()); 
 
-// console.log(obj);
-// outof.innerHTML=obj.length;
-// outof2.innerHTML=obj.length;
+
+getJSON();
+
+
+
+outof.innerHTML=obj.length;
+outof2.innerHTML=obj.length;
 
 function Start(){
     
@@ -115,7 +121,6 @@ function caseCorrect(){
         case 2:
             correctVar =answer1;
             wrongArray=[answer2,answer3,answer4];
-            console.log(correctVar);
             break;
         case 3:
             correctVar = answer2;
@@ -157,7 +162,6 @@ function removeEvents(){
 
 
 function correctAnswer(){
-    console.log('tacno');
     correctVar.style.background = '#2E8B57';
     score++;
     score_span.innerHTML=score;
