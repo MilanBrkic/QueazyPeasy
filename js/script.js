@@ -12,41 +12,16 @@ const outof2= document.getElementById('out-of2');
 const next=document.getElementById('next-btn');
 next.style.visibility = "hidden";
 const start = document.getElementById('start-btn');
+var set = new Array();
 
 
 var correctVar;
 var wrongArray;
 var index;
 var obj;
+var questionNo;
+var iterator;
 
-// const obj=[{
-//     question: "Koliko je 2+2?",
-//     answer1: 1,
-//     answer2: 2,
-//     answer3: 3,
-//     answer4: 4,
-//     correct: 5
-// },
-// {
-//     question: "Koliko je 3+3?",
-//     answer1: 6,
-//     answer2: 4,
-//     answer3: 3,
-//     answer4: 5,
-//     correct: 2
-// },
-// {
-//     question: "Leo messi?",
-//     answer1: "Najgori",
-//     answer2: "Najbolji",
-//     answer3: "Onk",
-//     answer4: "Moze bolje",
-//     correct: 3
-// }]
-
-
-
-var obj;
 
 function getJSON(){
     var xhttp = new XMLHttpRequest();
@@ -56,8 +31,7 @@ function getJSON(){
 
     xhttp.onload = function(){
         var response =JSON.parse(xhttp.responseText);
-        obj = response.data;
-        
+        obj = response;
     }
     
     xhttp.send();
@@ -69,15 +43,18 @@ function getJSON(){
 getJSON();
 
 
-
 outof.innerHTML=obj.length;
 outof2.innerHTML=obj.length;
 
 function Start(){
+    generateSet(10);
     
+
+    
+    questionNo=1;
     start.style.visibility="hidden";
     index=0;
-    question.innerHTML=obj[index].question;
+    question.innerHTML=questionNo +"."+obj[index].question;
     answer1.innerHTML=obj[index].answer1;
     answer2.innerHTML=obj[index].answer2;
     answer3.innerHTML=obj[index].answer3;
@@ -94,12 +71,12 @@ function Start(){
 }
 
 function Next(){
-    
+    questionNo++;
     index++;
     if(index==obj.length){
         return;
     }
-    question.innerHTML=obj[index].question;
+    question.innerHTML=questionNo +"."+obj[index].question;
     answer1.innerHTML=obj[index].answer1;
     answer2.innerHTML=obj[index].answer2;
     answer3.innerHTML=obj[index].answer3;
@@ -117,7 +94,7 @@ function Next(){
 }
 
 function caseCorrect(){
-    switch(obj[index].correct){
+    switch(parseInt(obj[index].correct)){
         case 2:
             correctVar =answer1;
             wrongArray=[answer2,answer3,answer4];
@@ -181,3 +158,24 @@ function wrongAnswer(){
     next.style.visibility = "visible";
 }
 
+function generateSet(limit){
+    var i=0;
+   while(set.length!=limit){
+       var random = Math.floor(Math.random()*obj.length);
+       if(!exist(random)){
+            set[i]=random;
+            i++;
+       }
+    
+   }
+   
+}
+
+function exist(num){
+    for(var i=0;i<set.length;i++){
+        if(num==set[i]){
+            return true;
+        }
+    }
+    return false;
+}
