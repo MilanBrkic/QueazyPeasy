@@ -10,13 +10,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="css/mainstyle.css">
+    <link rel="SHORTCUT ICON" href="favicon.ico" type="image/x-icon" />
+    <link rel="ICON" href="favicon.ico" type="image/ico" />
     <title>QueazyPeasy</title>
     
     <?php
         include_once 'connection.php';
 
         $database = new Connection('quiz');
-        $database->select();
+        $database->select('questions', "*", "type='art'");
+        // $database->select();
         $rows=array();
         while($r = mysqli_fetch_assoc($database->getResult())){
             $rows[]=$r;
@@ -55,7 +58,7 @@
                 <div>
                     <ul>
                         <li><b>Choose a category:</b></li>
-                        <li>General</li>
+                        <li><b>General</b></li>
                         <li>Geography</li>
                         <li>Math</li>
                         <li>History</li>
@@ -97,46 +100,21 @@
                             <button id="start-btn" class="start-btn btn" onclick="Start()">Start</button>
                         </div>
                         
+                        
                         <div class="next_div">
                             <button id="next-btn" class="next-btn btn hide" onclick="Next()">Next</button>
                         </div>
                         
                     </div>
+                    <div>
+                            <button id="playa-btn" class="playa-btn btn hide" onclick="PlayAgain()">Play again</button>
+                        </div>
                     
                 </div>
 
 
                 
-                <!-- <div class="containerq">
-                    <div id="question-container" class="hide">
-                        <div class="row" id="questionid">
-                            <div id="questions">Questionmmmmmmmmmmmmmmmmmmmmmmm</div>
-                        </div>
-                     
-                      <div id="answer-buttons" class="btn-grid">
 
-                          <div class="row">    
-                            <button class="btn">Answer 1</button>
-                            <button class="btn">Answer 2</button>
-                          </div>
-                          <div class="row">
-                            <button class="btn">Answer 3</button>
-                            <button class="btn">Answer 4</button>
-                          </div>
-                      </div>
-                      <div class="controls">
-                      <div class="row">
-                        
-                            <div class="col-xl-6">
-                                <button id="start-btn" class="start-btn btn  ">Start</button>
-                            </div>  
-                            <div class="col-xl-6">
-                                <button id="next-btn" class="next-btn btn hide">Next</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                  </div> -->
             </div>
 
 

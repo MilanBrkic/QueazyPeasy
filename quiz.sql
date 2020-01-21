@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 16, 2020 at 08:22 PM
+-- Generation Time: Jan 21, 2020 at 09:40 PM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.11
 
@@ -76,7 +76,21 @@ INSERT INTO `questions` (`id`, `question`, `answer1`, `answer2`, `answer3`, `ans
 (30, 'What is the meaning of the art term impasto?', 'Oily paint', 'Thickly applied paint', 'Watery paint', 'Transparent paint', 3, 'art'),
 (31, 'What are the three drooping objects in The Persistence of Memory by Salvador Dalí?', 'Shoes', 'Telephones', 'Clocks', 'Ants', 4, 'art'),
 (32, 'Which arts\' movement was founded by Pablo Picasso and Georges Braque?', 'Cubism', 'Surrealism', 'Impressionism', 'Art Nouveau', 2, 'art'),
-(33, 'Complete the Van Gogh painting title: \'Starry Night Over the ...\'?', 'Sky', 'Rhone', 'Month', 'Winter', 3, 'art');
+(33, 'Complete the Van Gogh painting title: \'Starry Night Over the ...\'?', 'Sky', 'Rhone', 'Month', 'Winter', 3, 'art'),
+(34, 'When did the Chetnobyl nuclear catastrophe occur?', '1963', '1986', '1982', '1974', 3, 'history'),
+(35, 'What river runs through Baghdad?', 'Karun', 'Jordan', 'Euphrates', 'Tigris', 5, 'geo'),
+(36, 'What percentage of the River Nile is located in Egypt?', '83%', '22%', '100%', '5%', 3, 'geo'),
+(37, 'What is the largest country on the Arabian Peninsula?', 'Jordan', 'Yemen', 'Saudi Arabia', 'United Arab Emirates', 4, 'geo'),
+(38, 'What city is the capital of Australia?', 'Meblbourne', 'Sydney', 'Perth', 'Canberra', 5, 'geo'),
+(39, 'Riyadh is the capital of what Middle-Eastern country?', 'Saudi Arabia', 'Syria', 'Yemen', 'Iraq', 2, 'geo'),
+(40, 'Which two countries are currently fighting in the so called \'Middle East Cold War\'?', 'Iran and Syria', 'Iran and Saudi Arabia', 'Israel and Palestine', 'Lebanon and Jordan', 3, 'geo'),
+(41, 'How tall is Avala mountain?', '634', '576', '480', '511', 5, 'geo'),
+(42, 'Who is credited as the designer of the many statues which decorated the Parthenon?', 'Phidias', 'Praxiteles', 'Scopas', 'Hesiod', 2, 'art'),
+(43, 'Which artist started painting at 27 and died at 37?', 'Pablo Picasso', 'Van Gogh', 'Da Vinci', 'Rembrant', 3, 'art'),
+(44, 'Which one of the following pieces belongs to Marina Abramovic?', 'The Artist Is Present', 'The Scream', 'The Artist is Still', 'The Torture Room', 2, 'art'),
+(45, 'How many paintings did Vincent Van Gogh sell during his lifetime?', '842', '27', '193', '1', 5, 'art'),
+(46, 'Which of the following paintings were most expensively sold? ', 'Salvator Mundi', 'Interchange', 'Vase with Fifteen Sunflowers', 'The Anatomy Lesson of Dr. Nicolaes Tulp', 2, 'art'),
+(47, 'How many versions of The Scream did Edvard Munch create?', '1', '3', '5', '7', 4, 'art');
 
 --
 -- Indexes for dumped tables
@@ -96,7 +110,7 @@ ALTER TABLE `questions`
 -- AUTO_INCREMENT for table `questions`
 --
 ALTER TABLE `questions`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

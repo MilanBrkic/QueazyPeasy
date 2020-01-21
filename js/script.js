@@ -12,16 +12,17 @@ const outof2= document.getElementById('out-of2');
 const next=document.getElementById('next-btn');
 next.style.visibility = "hidden";
 const start = document.getElementById('start-btn');
+const playa = document.getElementById('playa-btn');
 var set = new Array();
 
 
 var correctVar;
 var wrongArray;
-var index;
+
 var obj;
 var questionNo;
 var iterator;
-
+var j;
 
 function getJSON(){
     var xhttp = new XMLHttpRequest();
@@ -42,23 +43,18 @@ function getJSON(){
 
 getJSON();
 
-
-outof.innerHTML=obj.length;
-outof2.innerHTML=obj.length;
+generateSet(10);
+outof.innerHTML=set.length;
+outof2.innerHTML=set.length;
 
 function Start(){
-    generateSet(10);
     
 
-    
-    questionNo=1;
+    questionNo=0;
     start.style.visibility="hidden";
-    index=0;
-    question.innerHTML=questionNo +"."+obj[index].question;
-    answer1.innerHTML=obj[index].answer1;
-    answer2.innerHTML=obj[index].answer2;
-    answer3.innerHTML=obj[index].answer3;
-    answer4.innerHTML=obj[index].answer4;
+    
+    j=set[questionNo];
+    setQuestion(j,questionNo);
     
 
     score=0;
@@ -72,15 +68,15 @@ function Start(){
 
 function Next(){
     questionNo++;
-    index++;
-    if(index==obj.length){
+    
+    j = set[questionNo];
+
+    if(questionNo>=set.length){
+        playa.style.visibility='visible';
+        next.style.visibility='hidden';
         return;
     }
-    question.innerHTML=questionNo +"."+obj[index].question;
-    answer1.innerHTML=obj[index].answer1;
-    answer2.innerHTML=obj[index].answer2;
-    answer3.innerHTML=obj[index].answer3;
-    answer4.innerHTML=obj[index].answer4;
+    setQuestion(j,questionNo);
     next.style.visibility = "hidden";
 
     answer1.style.background='black';
@@ -92,9 +88,20 @@ function Next(){
 
     caseWrong();
 }
+function setQuestion(j,questionNo){
+    question.innerHTML=questionNo+1 +"."+obj[j].question;
+    answer1.innerHTML=obj[j].answer1;
+    answer2.innerHTML=obj[j].answer2;
+    answer3.innerHTML=obj[j].answer3;
+    answer4.innerHTML=obj[j].answer4;
+}
+
+function PlayAgain(){
+    location.reload();
+}
 
 function caseCorrect(){
-    switch(parseInt(obj[index].correct)){
+    switch(parseInt(obj[j].correct)){
         case 2:
             correctVar =answer1;
             wrongArray=[answer2,answer3,answer4];
