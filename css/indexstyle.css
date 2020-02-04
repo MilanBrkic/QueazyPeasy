@@ -86,6 +86,22 @@ input{
     justify-content: center;
 }
 
+#error{
+  margin-top: 1.5%;
+    background: rgb(30, 30, 30);
+    /* border: solid 1px rgb(80,80,80); */
+    border-radius: 5px;
+    /* padding: 5px; */
+    /* padding-top: 15px;
+    padding-bottom: 15px; */
+    /* margin-left: 8%;
+    margin-right: 8%; */
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    color: rgb(255, 96, 96);
+}
 p{
     padding-bottom: 0;
     margin-bottom: 0;

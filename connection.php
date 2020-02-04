@@ -30,7 +30,7 @@ class Connection{
         if($order!=null)
             $q .=" ORDER BY ".$order;
 
-        
+    
         if($this->executeQuery($q))
             return true;
         else return false;

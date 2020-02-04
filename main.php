@@ -1,3 +1,15 @@
+<?php
+    $_SESSION['score'] = 'score_general';
+    session_start();
+    if(!isset($_SESSION['username'])){
+        header("Location: index.php");
+    }
+
+    if(isset($_POST['signout'])){
+        session_destroy();
+        header("Location: index.php");
+    }
+?>  
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,7 +30,7 @@
         include_once 'connection.php';
 
         $database = new Connection('quiz');
-        $database->select('questions', "*", "type='art'");
+        $database->select('questions');
         // $database->select();
         $rows=array();
         while($r = mysqli_fetch_assoc($database->getResult())){
@@ -41,11 +53,13 @@
                 </div>
                 <div class="col-xl-2">
                     <div class="row">
-                        <p class="hello">Hello <span id="username">user</span></p>
+                        <p class="hello">Hello, <span id="username"><?php echo $_SESSION['username'] ?></span></p>
                     </div>
                     <div class="row">
                         
-                        <p class="hello">ovde ide slika</p>
+                        <form method="post">
+                            <input type="submit" name="signout" value="Sign Out" id="signout">
+                        </form>
                     </div>
                    
                 </div>
@@ -60,9 +74,9 @@
                         <li><b>Choose a category:</b></li>
                         <li><b>General</b></li>
                         <li>Geography</li>
-                        <li>Math</li>
                         <li>History</li>
                         <li>Art</li>
+                        <li>Sport</li>
                     </ul>
                 </div>
             </div>
@@ -119,8 +133,8 @@
 
 
             <div class="col-xl-2 col-md-2 side">
-                <p>Category: <span id="category"></span> </p>
-                <p>High-score: <span id="high-score"></span>/<span id="out-of"></span></p>
+                <p>Category: <span id="category">General</span> </p>
+                <p>High-score: <span id="high-score"></span><?php echo $_SESSION['score_general'] ?>/<span id="out-of"></span></p>
                 <p>Current Score:
                      <span id="score"></span>/<span id="out-of2"></span></p>
 

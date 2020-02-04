@@ -13,6 +13,7 @@ const next=document.getElementById('next-btn');
 next.style.visibility = "hidden";
 const start = document.getElementById('start-btn');
 const playa = document.getElementById('playa-btn');
+const user = document.getElementById('username');
 var set = new Array();
 
 
@@ -66,6 +67,8 @@ function Start(){
 
 }
 
+
+
 function Next(){
     questionNo++;
     
@@ -74,6 +77,8 @@ function Next(){
     if(questionNo>=set.length){
         playa.style.visibility='visible';
         next.style.visibility='hidden';
+
+        var xhttp = new XMLHttpRequest();
         return;
     }
     setQuestion(j,questionNo);
@@ -87,6 +92,14 @@ function Next(){
     caseCorrect();
 
     caseWrong();
+}
+
+function whichCategoryAmIIn(){
+    switch(category){
+        case 'General':
+            return 
+            break;
+    }
 }
 function setQuestion(j,questionNo){
     question.innerHTML=questionNo+1 +"."+obj[j].question;

@@ -144,6 +144,18 @@ li{
 }
 
 .hello{
+    margin-bottom: 0px;
+    color: white;
+    font-size: 30px;
+
+}
+
+#signout{
+    background-color:  grey;
+    width: 90px;
+    height: 35px;
+    border: none;
+    font-size: 20px;
     color: white;
 }
 

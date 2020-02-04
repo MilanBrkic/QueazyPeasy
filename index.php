@@ -1,3 +1,64 @@
+<?php
+    session_start();
+    include_once 'connection.php';
+    $db = new Connection('quiz');
+    $error = "";
+    if(isset($_POST['signin'])){
+        $username = strip_tags($_POST['username']);
+        $password = strip_tags($_POST['password']);
+
+        $username = stripslashes($username);
+        $password = stripslashes($password);
+        $password = md5($password);
+        
+            
+        $where="username='$username' LIMIT 1";
+        $db->select('user',"*", $where);
+        $row = mysqli_fetch_assoc($db->getResult());
+        $num = mysqli_num_rows($db->getResult());
+        
+        try {
+            if($num == 0){
+                $error = 'Incorrect username or password';
+            
+            }
+            else{
+                $db_username = $row['username'];
+                $db_password = $row['password'];
+                $general = $row['score_general'];
+                $geo = $row['score_geo'];
+                $math = $row['score_math'];
+                $history = $row['score_history'];
+                $art = $row['score_art'];
+                $sport = $row['score_sport'];
+                $admin = $row['admin'];
+
+                // echo $db_password," ",$password;
+
+                if($db_password==$password){
+                    $_SESSION['username']=$username;
+                    $_SESSION['score_general'] = $general;
+                    $_SESSION['score_geo'] = $geo;
+                    $_SESSION['score_math'] = $math;
+                    $_SESSION['score_history'] = $history;
+                    $_SESSION['score_art'] = $art;
+                    $_SESSION['score_sport'] = $sport;
+                    $_SESSION['admin'] = $admin;
+                    header("Location: main.php");
+                }
+                else{
+                    $error = 'Incorrect username or password';
+                }
+            }
+        } catch (Exception $e) {
+            
+        }
+        
+        
+    }
+   
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,19 +82,31 @@
     <div class="signin centar">
         <br> Sign in to QueazyPeasy
     </div>
-    
+    <div class="row">
+            <div class="col xl-5">
+                
+            </div>
+            <div class="col xl-2" id="error">
+                <p><?php echo $error ?></p>  
+            </div>
+
+
+            <div class="col xl-5">
+                
+            </div>
+        </div>
     <div class="container">
         <div class="row">
             <div class="col xl-5">
                 
             </div>
             <div class="col xl-2" id="box">
-                <form>
+                <form method="post" enctype="multipart/form-data">
                     Username: <br>
-                    <input size="35%" type="text" placeholder="Enter your username"> <br>
+                    <input id="username" size="35%" type="text" placeholder="Enter your username" name="username"> <br>
                     Password:<br>
-                    <input size="35%" type="password" placeholder="Enter your password"><br>
-                    <input type="submit" value="Sign in " class="btn btn-primary " id="buton">
+                    <input size="35%" type="password" placeholder="Enter your password" name="password"><br>
+                    <input type="submit" value="Sign in " class="btn btn-primary " id="buton" name='signin'>
                 </form>
             </div>
 
