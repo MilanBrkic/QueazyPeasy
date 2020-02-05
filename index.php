@@ -103,9 +103,9 @@
             <div class="col xl-2" id="box">
                 <form method="post" enctype="multipart/form-data">
                     Username: <br>
-                    <input id="username" size="35%" type="text" placeholder="Enter your username" name="username"> <br>
+                    <input id="username" size="37%" type="text" placeholder="Enter your username" name="username"> <br>
                     Password:<br>
-                    <input size="35%" type="password" placeholder="Enter your password" name="password"><br>
+                    <input size="37%" type="password" placeholder="Enter your password" name="password"><br>
                     <input type="submit" value="Sign in " class="btn btn-primary " id="buton" name='signin'>
                 </form>
             </div>
@@ -142,7 +142,7 @@
                 
             </div>
             <div class="col xl-2" id="newto">
-                <p>New to QueazyPeasy? <a href="">Create an account</a>.</p>  
+                <p>New to QueazyPeasy? <a href="register.php">Create an account</a>.</p>  
             </div>
 
 

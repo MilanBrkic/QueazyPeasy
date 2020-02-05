@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.1
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 05, 2020 at 10:53 PM
--- Server version: 10.4.8-MariaDB
--- PHP Version: 7.3.11
+-- Generation Time: Feb 06, 2020 at 12:02 AM
+-- Server version: 10.4.6-MariaDB
+-- PHP Version: 7.3.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -117,9 +117,9 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `username`, `password`, `email`, `score_general`, `score_geo`, `score_math`, `score_history`, `score_art`, `score_sport`, `admin`) VALUES
-(1, 'lalkec98', '32d191af04ae51cd439393c6e0b105ea', 'lalkec@gmail.com', 0, 0, 0, 0, 0, 0, 0),
-(2, 'milanb', '4782be09056c6dc8abd5361645df5ed8', 'milan.brkic1998@gmail.com', 0, 0, 0, 0, 0, 0, 1),
-(3, 'coma', 'b6468988dd7409dc15950491b1fef37c', 'comacomic@gmail.com', 0, 0, 0, 0, 0, 0, 1);
+(1, 'lalkec98', '32d191af04ae51cd439393c6e0b105ea', 'lalkec@gmail.com', 1, 0, 0, 0, 0, 0, 0),
+(2, 'milanb', '4782be09056c6dc8abd5361645df5ed8', 'milan.brkic1998@gmail.com', 6, 0, 0, 0, 0, 0, 1),
+(3, 'coma', 'b6468988dd7409dc15950491b1fef37c', 'comacomic@gmail.com', 10, 0, 0, 0, 0, 0, 1);
 
 --
 -- Indexes for dumped tables

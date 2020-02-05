@@ -79,6 +79,14 @@ function Next(){
         next.style.visibility='hidden';
 
         var xhttp = new XMLHttpRequest();
+        var params = "score="+score_span.innerHTML;
+        
+        xhttp.open('POST','server/highscore.php',true);
+        xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+        
+
+        xhttp.send(params);
+        
         return;
     }
     setQuestion(j,questionNo);
@@ -199,3 +207,4 @@ function exist(num){
     }
     return false;
 }
+

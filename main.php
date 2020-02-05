@@ -1,6 +1,7 @@
 <?php
-    $_SESSION['score'] = 'score_general';
+    
     session_start();
+    $_SESSION['score'] = 'score_general';
     if(!isset($_SESSION['username'])){
         header("Location: index.php");
     }
@@ -140,7 +141,9 @@
 
             </div>
         </div>
-
+        <div id="test">
+            
+        </div>
         
         
     </div>

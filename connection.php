@@ -36,6 +36,17 @@ class Connection{
         else return false;
     }
 
+    function update($table,$row,$values){
+        if($table=='user'){
+            $q = "UPDATE ".$table." SET ".$row."='".$values[1]."' WHERE username='".$values[0]."'";
+        }
+        
+        if($this->executeQuery($q))
+            return true;
+        else return false;
+    }
+
+
     function executeQuery($query){
         if($this->result = $this->dblink->query($query)){
             // echo "<script>console.log('izvrsen:".$query."');</script>";
