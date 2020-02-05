@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 21, 2020 at 09:40 PM
+-- Generation Time: Feb 05, 2020 at 10:53 PM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.11
 
@@ -92,6 +92,35 @@ INSERT INTO `questions` (`id`, `question`, `answer1`, `answer2`, `answer3`, `ans
 (46, 'Which of the following paintings were most expensively sold? ', 'Salvator Mundi', 'Interchange', 'Vase with Fifteen Sunflowers', 'The Anatomy Lesson of Dr. Nicolaes Tulp', 2, 'art'),
 (47, 'How many versions of The Scream did Edvard Munch create?', '1', '3', '5', '7', 4, 'art');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user`
+--
+
+CREATE TABLE `user` (
+  `id` int(11) NOT NULL,
+  `username` varchar(20) COLLATE utf32_unicode_ci NOT NULL,
+  `password` varchar(255) COLLATE utf32_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf32_unicode_ci NOT NULL,
+  `score_general` int(10) NOT NULL,
+  `score_geo` int(10) NOT NULL,
+  `score_math` int(11) NOT NULL,
+  `score_history` int(11) NOT NULL,
+  `score_art` int(11) NOT NULL,
+  `score_sport` int(11) NOT NULL,
+  `admin` int(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf32 COLLATE=utf32_unicode_ci;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`id`, `username`, `password`, `email`, `score_general`, `score_geo`, `score_math`, `score_history`, `score_art`, `score_sport`, `admin`) VALUES
+(1, 'lalkec98', '32d191af04ae51cd439393c6e0b105ea', 'lalkec@gmail.com', 0, 0, 0, 0, 0, 0, 0),
+(2, 'milanb', '4782be09056c6dc8abd5361645df5ed8', 'milan.brkic1998@gmail.com', 0, 0, 0, 0, 0, 0, 1),
+(3, 'coma', 'b6468988dd7409dc15950491b1fef37c', 'comacomic@gmail.com', 0, 0, 0, 0, 0, 0, 1);
+
 --
 -- Indexes for dumped tables
 --
@@ -103,6 +132,12 @@ ALTER TABLE `questions`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -111,6 +146,12 @@ ALTER TABLE `questions`
 --
 ALTER TABLE `questions`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+
+--
+-- AUTO_INCREMENT for table `user`
+--
+ALTER TABLE `user`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
