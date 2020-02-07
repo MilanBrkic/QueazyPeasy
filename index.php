@@ -62,6 +62,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+
 <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <meta charset="UTF-8">
@@ -70,6 +72,7 @@
     <link rel="stylesheet" type="text/css" href="css/indexstyle.css">
     <link rel="SHORTCUT ICON" href="favicon.ico" type="image/x-icon" />
     <link rel="ICON" href="favicon.ico" type="image/ico" /> 
+    
     <title>QueazyPeasy</title>
 </head>
 <body>
@@ -126,7 +129,7 @@
                 <div class="google-btn">
                     <div class="google-icon-wrapper">
                         <img class="google-icon" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"/>
-                    </div>
+                    </div data-onsuccess="onSignIn">
                         <p class="btn-text"><b>Sign in with google</b></p>
                     </div>
             </div>
@@ -153,6 +156,21 @@
         
         
     </div>
+    <script>
+        function onSignIn(googleUser) {
+        // Useful data for your client-side scripts:
+        var profile = googleUser.getBasicProfile();
+        console.log("ID: " + profile.getId()); // Don't send this directly to your server!
+        console.log('Full Name: ' + profile.getName());
+        console.log('Given Name: ' + profile.getGivenName());
+        console.log('Family Name: ' + profile.getFamilyName());
+        console.log("Image URL: " + profile.getImageUrl());
+        console.log("Email: " + profile.getEmail());
 
+        // The ID token you need to pass to your backend:
+        var id_token = googleUser.getAuthResponse().id_token;
+        console.log("ID Token: " + id_token);
+      }
+    </script>
 </body>
 </html>

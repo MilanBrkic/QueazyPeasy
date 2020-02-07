@@ -1,3 +1,56 @@
+<?php  
+    include_once 'connection.php';
+    $db = new Connection('quiz');
+    $error = "";
+    $success="";
+    $click = "";
+    if(isset($_POST['signup'])){
+        if(empty($_POST['username'])){
+            $error="Enter your username";
+        }
+        else if(empty($_POST['email'])){
+            $error="Enter your email";
+        } 
+        else if(empty($_POST['password'])){
+            $error="Enter your password";
+        }
+        else{
+            //USERNAME VALIDATION
+            $username = $_POST['username'];
+            $where = "username='$username' LIMIT 1";
+            $db->select("user","*",$where);
+            $row = mysqli_fetch_assoc($db->getResult());
+            $num = mysqli_num_rows($db->getResult());
+            if($num>0){
+                $error = "Username already taken";
+            }
+            else{
+                //EMAIL VALIDATION
+                $email = $_POST['email'];
+                $where = "email='$email' LIMIT 1";
+                $db->select("user","*",$where);
+                $row = mysqli_fetch_assoc($db->getResult());
+                $num = mysqli_num_rows($db->getResult());
+                if($num>0){
+                    $error = "Email already taken";
+                }
+                else{
+                    //PASSWORD VALIDATION
+                   $password = $_POST['password'];
+                   if(strlen($password)<=5){
+                        $error="Password weak";
+                   }
+                   else{
+                        $db->insert("user", array($username,$password,$email));
+                        $success ="Great! Registration successful. ";
+                        $click="Click here to sign up";
+                   }
+                }
+            }
+        }
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,7 +79,7 @@
                 
             </div>
             <div class="col xl-2" id="error">
-                <p></p>  
+                <p><?php echo $error?></p>  
             </div>
 
 
@@ -49,6 +102,20 @@
                     <input size="37%" type="password" placeholder="Enter your password" name="password"><br>
                     <input type="submit" value="Sign up " class="btn btn-primary " id="buton" name='signup'>
                 </form>
+            </div>
+
+
+            <div class="col xl-5">
+                
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col xl-5">
+                
+            </div>
+            <div class="col xl-2" id="success">
+                <p><?php echo $success?><a href="index.php"><?php echo $click?></a></p>  
             </div>
 
 

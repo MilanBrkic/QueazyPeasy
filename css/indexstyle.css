@@ -5,7 +5,6 @@
 body{
     background: rgb(30,30,30);
     color: whitesmoke;
-    /* display: grid; */
 }
 
 .centar{
@@ -19,12 +18,7 @@ body{
     font-family: 'Roboto', sans-serif;
     font-size: 20px;
 }
-/* 
-.container{
-   
-    display: flex;
-    justify-content: center;
-} */
+
 
 img{
     
@@ -37,7 +31,7 @@ img{
     background: rgb(50, 50, 50);
     border: solid 1px rgb(80,80,80);
     border-radius: 5px;
-    /* padding: 5px; */
+ 
     padding-top: 15px;
     padding-bottom: 15px;
     margin-left: 8%;
@@ -75,7 +69,7 @@ input{
     background: rgb(30, 30, 30);
     border: solid 1px rgb(80,80,80);
     border-radius: 5px;
-    /* padding: 5px; */
+
     padding-top: 15px;
     padding-bottom: 15px;
     margin-left: 8%;
@@ -89,13 +83,9 @@ input{
 #error{
   margin-top: 1.5%;
     background: rgb(30, 30, 30);
-    /* border: solid 1px rgb(80,80,80); */
+ 
     border-radius: 5px;
-    /* padding: 5px; */
-    /* padding-top: 15px;
-    padding-bottom: 15px; */
-    /* margin-left: 8%;
-    margin-right: 8%; */
+   
     font-family: 'Roboto', sans-serif;
     font-size: 14px;
     display: flex;
@@ -128,6 +118,7 @@ p{
   background-color: #4285f4;
   border-radius: 2px;
   box-shadow: 0 3px 4px 0 rgba(0,0,0,.25);
+  cursor: pointer;
    
 }
   .google-icon-wrapper {
@@ -163,5 +154,15 @@ p{
     background: #1669F2;
   }
 
-
+#success{
+  margin-top: 1.5%;
+    background: rgb(30, 30, 30);
+    border-radius: 5px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 13px;
+    display: flex;
+    justify-content: center;
+    color: rgb(14, 146, 14);
+  
+}
 

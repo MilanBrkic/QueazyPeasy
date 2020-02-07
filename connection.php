@@ -29,11 +29,21 @@ class Connection{
             $q .=" WHERE ".$where;
         if($order!=null)
             $q .=" ORDER BY ".$order;
-
     
         if($this->executeQuery($q))
             return true;
         else return false;
+    }
+
+    function insert($table,$values){
+        if($table=='user'){
+            $q="INSERT INTO ".$table."(username, password, email) VALUES ('".$values[0]."','".md5($values[1])."','".$values[2]."')";
+        }
+
+        if($this->executeQuery($q))
+            return true;
+        else return false;
+        
     }
 
     function update($table,$row,$values){
