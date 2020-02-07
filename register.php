@@ -43,7 +43,7 @@
                    else{
                         $db->insert("user", array($username,$password,$email));
                         $success ="Great! Registration successful. ";
-                        $click="Click here to sign up";
+                        $click="Click here to sign in";
                    }
                 }
             }
