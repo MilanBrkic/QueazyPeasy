@@ -2,7 +2,14 @@ header{
     background-color: black;
 }
 
+a{
+    text-decoration: none;
+    color: black;
+}
 
+a:hover{
+    text-decoration: none;
+}
 
 .logo{
     color: blanchedalmond;
@@ -100,16 +107,14 @@ li{
 .btn{
     background-color: black;
     color: white;
-    /* background-color: rgb(107, 160, 69); */
+
 }
 
 .btn:hover{
     background-color: grey;
 }
 
-.pitanje{
-    /* display: flex; justify-content: center; */
-}
+
 
 .controls{
     display: grid;
@@ -150,9 +155,21 @@ li{
 
 }
 
+
+
 #signout{
     background-color:  grey;
     width: 90px;
+    height: 35px;
+    border: none;
+    font-size: 20px;
+    color: white;
+}
+
+#admin{
+    margin-top: 5%;
+    background-color:  grey;
+    width: 140px;
     height: 35px;
     border: none;
     font-size: 20px;
