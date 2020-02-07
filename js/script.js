@@ -44,7 +44,18 @@ function getJSON(){
 
 getJSON();
 
-generateSet(10);
+
+var path = window.location.pathname;
+var page = path.split("/").pop();
+if(page=='main.php'){
+    generateSet(10);  
+}
+else{
+    generateSet(5);
+}
+
+
+
 outof.innerHTML=set.length;
 outof2.innerHTML=set.length;
 
@@ -81,7 +92,7 @@ function Next(){
         var xhttp = new XMLHttpRequest();
         var params = "score="+score_span.innerHTML;
         
-        xhttp.open('POST','server/highscore.php',true);
+        xhttp.open('POST','../server/highscore.php',true);
         xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
         
 
@@ -102,13 +113,7 @@ function Next(){
     caseWrong();
 }
 
-function whichCategoryAmIIn(){
-    switch(category){
-        case 'General':
-            return 
-            break;
-    }
-}
+
 function setQuestion(j,questionNo){
     question.innerHTML=questionNo+1 +"."+obj[j].question;
     answer1.innerHTML=obj[j].answer1;
@@ -193,9 +198,12 @@ function generateSet(limit){
        if(!exist(random)){
             set[i]=random;
             i++;
-       }
-    
+        }
+        
    }
+   console.log(set);
+   
+   
    
 }
 
