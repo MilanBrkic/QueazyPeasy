@@ -176,3 +176,43 @@ li{
     color: white;
 }
 
+.quote_div{
+    /* background-color: grey; */
+    justify-items: center;
+    justify-content: center;
+    text-justify: center;
+    margin-top: 26px;
+    
+}
+
+.second{
+    background-color: rgb(255, 244, 145);
+    text-justify: center;
+    border: 1px solid khaki;
+    border-radius: 2%;
+    justify-content: center;
+    justify-items: center;
+}
+
+#quote{
+    font-size: 16px;
+}
+
+
+#generate{
+    background-color: rgb(255, 249, 191);
+    border:1px solid rgb(48, 47, 47);
+    border-radius: 2px;
+}
+
+#generate:hover{
+    background-color: rgb(48, 47, 47);
+    color:rgb(255, 249, 191) ;
+}
+
+#buttonGenerate{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 9px;
+    
+}

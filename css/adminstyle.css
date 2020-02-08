@@ -1,0 +1,30 @@
+
+body{
+    background-color:lavender
+    ;
+}
+table {
+    border-collapse: collapse;
+    background-color: rgb(210, 210, 247);
+  }
+  
+  table, th, td {
+    border: 1px solid black;
+  }
+
+  
+  tr:hover {background-color: rgb(196, 196, 247);}
+
+  #insert_txt{
+      font-size: 22px;
+  }
+
+  input{
+      width: 240px;
+  }
+
+  #buton{
+      justify-content: center;
+      width: 60px;
+      /* font-size: 30px; */
+  }

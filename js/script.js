@@ -216,3 +216,14 @@ function exist(num){
     return false;
 }
 
+function generate_quote(){
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', '../ajax/ajax.php',true);
+    xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+
+    xhr.onload = function(){
+        document.getElementById('ajax').innerHTML = this.responseText;
+    }
+
+    xhr.send();
+}

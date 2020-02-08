@@ -15,6 +15,16 @@
         header("Location: admin.php");
     }
 ?>  
+
+<!-- generisanje random quote-ova api -->
+<?php
+    $url ='https://programming-quotes-api.herokuapp.com/quotes/random';
+   include_once "../curl.php";
+   $curl_obj=curl($url);
+       $json_objekat=json_decode($curl_obj);
+   
+?>    
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -139,6 +149,8 @@
                     
                 </div>
 
+                
+
 
                 
 
@@ -150,15 +162,32 @@
                 <p>High-score: <span id="high-score"></span><?php echo $_SESSION[$_SESSION['score']] ?>/<span id="out-of"></span></p>
                 <p>Current Score:
                      <span id="score"></span>/<span id="out-of2"></span></p>
-
+                          
             </div>
         </div>
         <div id="test">
             
         </div>
+
+        <div class="row quote_div first">
+            <div class="col-xl-4 col-md-2 quote_div second" id="ajax">
+                <p id="quote"><i>
+                    <?php 
+                        echo $json_objekat->en;
+                    ?>
+                </i></p>
+                <div id="buttonGenerate">
+                <button id="generate" onclick="generate_quote()">Generate quote</button>
+                </div>
+            </div>
+        </div>
         
         
     </div>
+
+    <footer>
+ 
+    </footer>
 
 <script src="../js/script.js"></script>
     

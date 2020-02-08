@@ -39,6 +39,10 @@ class Connection{
         if($table=='user'){
             $q="INSERT INTO ".$table."(username, password, email) VALUES ('".$values[0]."','".md5($values[1])."','".$values[2]."')";
         }
+        if($table=='questions'){
+            $q="INSERT INTO ".$table."(question, answer1, answer2, answer3, answer4, correct, type) VALUES ('".$values[0]."','".($values[1])."','".$values[2]."','".($values[3])."','".($values[4])."','".($values[5])."','".($values[6])."')";
+            echo $q;
+        }
 
         if($this->executeQuery($q))
             return true;
@@ -50,6 +54,7 @@ class Connection{
         if($table=='user'){
             $q = "UPDATE ".$table." SET ".$row."='".$values[1]."' WHERE username='".$values[0]."'";
         }
+     
         
         if($this->executeQuery($q))
             return true;
