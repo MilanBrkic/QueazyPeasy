@@ -1,7 +1,9 @@
 
+
 body{
-    background-color:lavender
-    ;
+    background-color:lavender;
+    padding: 5px;
+    
 }
 table {
     border-collapse: collapse;
@@ -15,16 +17,24 @@ table {
   
   tr:hover {background-color: rgb(196, 196, 247);}
 
-  #insert_txt{
+  #insert_txt,#update_txt,#delete_txt{
       font-size: 22px;
   }
 
   input{
-      width: 240px;
+      width: 300px;
   }
 
   #buton{
       justify-content: center;
-      width: 60px;
+      width: 80px;
       /* font-size: 30px; */
+  }
+
+  #sort{
+      margin-top: 20px;;
+  }
+
+  #question{
+      cursor: pointer;
   }

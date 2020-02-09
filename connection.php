@@ -55,12 +55,25 @@ class Connection{
             $q = "UPDATE ".$table." SET ".$row."='".$values[1]."' WHERE username='".$values[0]."'";
         }
      
-        
+        if($table=='questions'){
+            $q = "UPDATE ".$table." SET question='".$values[1]."', answer1='".$values[2]."',answer2='".$values[3]."',answer3='".$values[4]."',answer4='".$values[5]."',correct='".$values[6]."',type='".$values[7]."' WHERE id=".$values[0].";";
+            
+        }
+
         if($this->executeQuery($q))
             return true;
         else return false;
     }
 
+    // DELETE FROM Customers WHERE CustomerName='Alfreds Futterkiste';
+
+    function delete($table,$where){
+        $q="DELETE FROM ".$table." WHERE id=".$where;
+        
+        if($this->executeQuery($q))
+            return true;
+        else return false;
+    }
 
     function executeQuery($query){
         if($this->result = $this->dblink->query($query)){
