@@ -1,3 +1,9 @@
+<?php
+session_start();
+    if(!isset($_SESSION['username'])){
+        header("Location: ../index.php");
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -47,10 +53,10 @@
             ?>
         </table>
         </div>
-    <div class="row">
-    <div class="col-xl-4">
+<div class="row">
+    <div class="col-xl-3">
         <form id="insert" method="post">
-        <p id="insert_txt"><b>Insert</b></p>
+            <p id="insert_txt"><b>Insert</b></p>
             Question: <br>
             <input type="text" name="question" placehoder="Enter question here"> <br>
             Answer1:<br>
@@ -65,12 +71,12 @@
             <input type="text" name="correct" placehoder="Enter correct answer here"> <br>
             Type of question:<br>
             <input type="text" name="type" placehoder="Enter type here"> <br>
-            <input type="submit" id="buton" value="Insert" name="button_insert" >
+            <input type="submit" class="buton" value="Insert" name="button_insert" >
         </form>
-</div>
-<div class="col-xl-4">
+    </div>
+    <div class="col-xl-3">
         <form id="update" method="post">
-        <p id="update_txt"><b>Update</b></p>
+            <p id="update_txt"><b>Update</b></p>
             Id: <br>
             <input type="text" name="id_update" placehoder="Enter id here"> <br>
             Question: <br>
@@ -88,23 +94,34 @@
             Type of question:<br>
             <input type="text" name="type_update" placehoder="Enter type here"> <br>
             
-            <input type="submit" id="buton" value="Update" name="button_update" >
+            <input type="submit" class="buton" value="Update" name="button_update" >
         </form>
 
 
-</div>
-<div class="col-xl-4">
-        <form id="insert" method="post">
-        <p id="delete_txt"><b>Delete</b></p>
+    </div>
+    <div class="col-xl-3">
+        <form  method="post">
+            <p id="delete_txt"><b>Delete</b></p>
             Id: <br>
             <input type="text" name="id_delete" placehoder="Enter id here"> <br>
             
-            <input type="submit" id="buton" value="Delete" name="button_delete" >
+            <input type="submit" class="buton"  value="Delete" name="button_delete" >
         </form>
+    </div>
+    <div class="col-xl-3">
         
-        </div>
+            <p id="search_txt"><b>Search</b></p>
+            Enter Question keyword <br>
+            <input type="text" name="keyword" placehoder="Enter keyword" id="keyword"> <br>
+            
+            <input type="submit" class="buton"  value="Search" name="button_keyword" onclick="search()"><br>
+            <br>
+            Click on default to get your table back <br>
+            <input  type="submit" id="default" class="buton"  value="Default" name="button_default" onclick="defaultTable()">
         
-        </div>
+    </div>
+
+</div>
         <?php
 
             function notempty($str){
@@ -151,8 +168,10 @@
             }
             
         }
+
+       
         
         ?>
-   <script src="../js/sort.js"></script>
+   <script src="../js/admin.js"></script>
 </body>
 </html>

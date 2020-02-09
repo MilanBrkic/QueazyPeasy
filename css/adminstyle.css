@@ -17,7 +17,7 @@ table {
   
   tr:hover {background-color: rgb(196, 196, 247);}
 
-  #insert_txt,#update_txt,#delete_txt{
+  #insert_txt,#update_txt,#delete_txt, #search_txt{
       font-size: 22px;
   }
 
@@ -25,7 +25,7 @@ table {
       width: 300px;
   }
 
-  #buton{
+  .buton{
       justify-content: center;
       width: 80px;
       /* font-size: 30px; */
@@ -37,4 +37,8 @@ table {
 
   #question{
       cursor: pointer;
+  }
+
+  #default{
+      width: 150px;
   }

@@ -29,7 +29,7 @@ class Connection{
             $q .=" WHERE ".$where;
         if($order!=null)
             $q .=" ORDER BY ".$order;
-    
+        // echo $q;
         if($this->executeQuery($q))
             return true;
         else return false;
